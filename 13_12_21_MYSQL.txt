@@ -1,0 +1,126 @@
+mysql> select * from employees_info;
++-------+-----------+----------+--------+---------------------+------+---------+
+| empID | firstname | lastname | salary | designation         | age  | dept_No |
++-------+-----------+----------+--------+---------------------+------+---------+
+|   101 | Bhushan   | Bangde   |  12000 | Software Developer  |   23 |      10 |
+|   102 | Gaurav    | Padole   |  15000 | Software Developer  |   24 |      10 |
+|   103 | Anurag    | Biradar  |  17000 | Software Developer  |   25 |      10 |
+|   104 | Snehal    | Padole   |  25000 | HR                  |   21 |      20 |
+|   105 | Abhishek  | khishte  |  15000 | Tester              |   26 |      30 |
+|   106 | vaishnavi | kapse    |  15000 | Front end Developer |   27 |      40 |
+|   107 | Rahul     | Mourya   |  14000 | Tech Support        |   27 |      20 |
+|   108 | Rohan     | tirpude  |  35000 | Delivery Manager    |   32 |      20 |
++-------+-----------+----------+--------+---------------------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql> select * from employees_info
+    ->  where salary not between 17000 and 25000;
++-------+-----------+----------+--------+---------------------+------+---------+
+| empID | firstname | lastname | salary | designation         | age  | dept_No |
++-------+-----------+----------+--------+---------------------+------+---------+
+|   101 | Bhushan   | Bangde   |  12000 | Software Developer  |   23 |      10 |
+|   102 | Gaurav    | Padole   |  15000 | Software Developer  |   24 |      10 |
+|   105 | Abhishek  | khishte  |  15000 | Tester              |   26 |      30 |
+|   106 | vaishnavi | kapse    |  15000 | Front end Developer |   27 |      40 |
+|   107 | Rahul     | Mourya   |  14000 | Tech Support        |   27 |      20 |
+|   108 | Rohan     | tirpude  |  35000 | Delivery Manager    |   32 |      20 |
++-------+-----------+----------+--------+---------------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql> ^C
+mysql> select * from employees_info
+    -> where salary not in (17000);
++-------+-----------+----------+--------+---------------------+------+---------+
+| empID | firstname | lastname | salary | designation         | age  | dept_No |
++-------+-----------+----------+--------+---------------------+------+---------+
+|   101 | Bhushan   | Bangde   |  12000 | Software Developer  |   23 |      10 |
+|   102 | Gaurav    | Padole   |  15000 | Software Developer  |   24 |      10 |
+|   104 | Snehal    | Padole   |  25000 | HR                  |   21 |      20 |
+|   105 | Abhishek  | khishte  |  15000 | Tester              |   26 |      30 |
+|   106 | vaishnavi | kapse    |  15000 | Front end Developer |   27 |      40 |
+|   107 | Rahul     | Mourya   |  14000 | Tech Support        |   27 |      20 |
+|   108 | Rohan     | tirpude  |  35000 | Delivery Manager    |   32 |      20 |
++-------+-----------+----------+--------+---------------------+------+---------+
+7 rows in set (0.01 sec)
+
+
+select * from employees_info
+    -> ;
++-------+-----------+----------+--------+---------------------+------+---------+
+| empID | firstname | lastname | salary | designation         | age  | dept_No |
++-------+-----------+----------+--------+---------------------+------+---------+
+|   101 | Bhushan   | Bangde   |  12000 | Software Developer  |   23 |      10 |
+|   102 | Gaurav    | Padole   |  15000 | Software Developer  |   24 |      10 |
+|   103 | Anurag    | Biradar  |  17000 | Software Developer  |   25 |      10 |
+|   104 | Snehal    | Padole   |  25000 | HR                  |   21 |      20 |
+|   105 | Abhishek  | khishte  |  15000 | Tester              |   26 |      30 |
+|   106 | vaishnavi | kapse    |  15000 | Front end Developer |   27 |      40 |
+|   107 | Rahul     | Mourya   |  14000 | Tech Support        |   27 |      20 |
+|   108 | Rohan     | tirpude  |  35000 | Delivery Manager    |   32 |      20 |
++-------+-----------+----------+--------+---------------------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql> select salary+0.3*salary from employees_info;
++-------------------+
+| salary+0.3*salary |
++-------------------+
+|             15600 |
+|             19500 |
+|             22100 |
+|             32500 |
+|             19500 |
+|             19500 |
+|             18200 |
+|             45500 |
++-------------------+
+8 rows in set (0.00 sec)
+
+
+mysql> select salary-0.1*salary
+    -> from employees_info;
++-------------------+
+| salary-0.1*salary |
++-------------------+
+|             10800 |
+|             13500 |
+|             15300 |
+|             22500 |
+|             13500 |
+|             13500 |
+|             12600 |
+|             31500 |
++-------------------+
+8 rows in set (0.00 sec)
+
+mysql> select salary*0.1*salary
+    -> from employees_info;
++-------------------+
+| salary*0.1*salary |
++-------------------+
+|          14400000 |
+|          22500000 |
+|          28900000 |
+|          62500000 |
+|          22500000 |
+|          22500000 |
+|          19600000 |
+|         122500000 |
++-------------------+
+8 rows in set (0.00 sec)
+
+mysql> select salary/0.1*salary
+    -> from employees_info;
++-------------------+
+| salary/0.1*salary |
++-------------------+
+|        1440000000 |
+|        2250000000 |
+|        2890000000 |
+|        6250000000 |
+|        2250000000 |
+|        2250000000 |
+|        1960000000 |
+|       12250000000 |
++-------------------+
+8 rows in set (0.00 sec)
